@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất cả bài viết | Blog Lập Trình Mạng</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Thêm style cho trang blog */
+        .page-title {
+            color: #2c3e50;
+            margin: 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .filters {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #7f8c8d;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .filter-btn:hover:not(.active) {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+        
+        .all-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .post-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        
+        .post-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .post-item h3 {
+            margin: 0.5rem 0;
+            font-size: 1.4rem;
+        }
+        
+        .post-item h3 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .post-item h3 a:hover {
+            color: #3498db;
+        }
+        
+        .post-item p {
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .post-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .post-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">📝 Blog Lập Trình Mạng</h1>
+            <nav>
+                <a href="index.html">🏠 Home</a>
+                <a href="blog.html" style="background-color: rgba(255,255,255,0.1);">📚 Blog</a>
+                <a href="about.html">👤 About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">📚 Tất cả bài viết</h1>
+        
+        <!-- Bộ lọc theo category -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">📂 Tất cả (9)</button>
+            <button class="filter-btn" data-filter="java">☕ Java (4)</button>
+            <button class="filter-btn" data-filter="javascript">📜 JavaScript (3)</button>
+            <button class="filter-btn" data-filter="network">🌐 Lập trình mạng (2)</button>
+        </div>
+
+        <!-- Danh sách bài viết -->
+        <div class="all-posts">
+            <!-- Bài viết 1 -->
+            <article class="post-item" data-category="java">
+                <div class="post-meta">
+                    <span class="post-date">📅 15/11/2024</span>
+                    <span class="category java">Java</span>
+                </div>
+                <h3><a href="posts/java-co-ban.html">Java Cơ Bản Cho Người Mới Bắt Đầu</a></h3>
+                <p>Cài đặt môi trường, cấu trúc chương trình đầu tiên, biến và kiểu dữ liệu cơ bản trong Java...</p>
+                <div class="post-stats">
+                    <span>⏱️ 5 phút đọc</span>
+                    <span>👁️ 125 lượt xem</span>
+                    <span>💬 8 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 2 -->
+            <article class="post-item" data-category="javascript">
+                <div class="post-meta">
+                    <span class="post-date">📅 18/11/2024</span>
+                    <span class="category javascript">JavaScript</span>
+                </div>
+                <h3><a href="posts/javascript-co-ban.html">JavaScript Từ Số 0</a></h3>
+                <p>Biến, hàm, DOM manipulation và event handling cơ bản trong JavaScript...</p>
+                <div class="post-stats">
+                    <span>⏱️ 6 phút đọc</span>
+                    <span>👁️ 98 lượt xem</span>
+                    <span>💬 5 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 3 -->
+            <article class="post-item" data-category="network">
+                <div class="post-meta">
+                    <span class="post-date">📅 20/11/2024</span>
+                    <span class="category network">Lập trình mạng</span>
+                </div>
+                <h3><a href="posts/java-socket.html">Java Socket Programming</a></h3>
+                <p>Xây dựng ứng dụng Client-Server với TCP Socket trong Java...</p>
+                <div class="post-stats">
+                    <span>⏱️ 8 phút đọc</span>
+                    <span>👁️ 76 lượt xem</span>
+                    <span>💬 3 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 4 -->
+            <article class="post-item" data-category="java">
+                <div class="post-meta">
+                    <span class="post-date">📅 22/11/2024</span>
+                    <span class="category java">Java</span>
+                </div>
+                <h3><a href="posts/oop-java.html">Hướng Đối Tượng Trong Java (OOP)</a></h3>
+                <p>Class, Object, Inheritance, Polymorphism, Encapsulation, Abstraction - 4 tính chất OOP cơ bản...</p>
+                <div class="post-stats">
+                    <span>⏱️ 10 phút đọc</span>
+                    <span>👁️ 89 lượt xem</span>
+                    <span>💬 6 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 5 -->
+            <article class="post-item" data-category="java">
+                <div class="post-meta">
+                    <span class="post-date">📅 25/11/2024</span>
+                    <span class="category java">Java</span>
+                </div>
+                <h3><a href="posts/collection-java.html">Collection Framework Trong Java</a></h3>
+                <p>List, Set, Map và cách sử dụng các collection trong lập trình Java...</p>
+                <div class="post-stats">
+                    <span>⏱️ 7 phút đọc</span>
+                    <span>👁️ 67 lượt xem</span>
+                    <span>💬 4 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 6 -->
+            <article class="post-item" data-category="javascript">
+                <div class="post-meta">
+                    <span class="post-date">📅 28/11/2024</span>
+                    <span class="category javascript">JavaScript</span>
+                </div>
+                <h3><a href="posts/nodejs-backend.html">Node.js Cho Backend Development</a></h3>
+                <p>Xây dựng server HTTP, REST API với Express.js và Node.js...</p>
+                <div class="post-stats">
+                    <span>⏱️ 9 phút đọc</span>
+                    <span>👁️ 54 lượt xem</span>
+                    <span>💬 7 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 7 -->
+            <article class="post-item" data-category="javascript">
+                <div class="post-meta">
+                    <span class="post-date">📅 01/12/2024</span>
+                    <span class="category javascript">JavaScript</span>
+                </div>
+                <h3><a href="posts/async-javascript.html">Async JavaScript: Callback, Promise, Async/Await</a></h3>
+                <p>Xử lý bất đồng bộ trong JavaScript với các kỹ thuật hiện đại...</p>
+                <div class="post-stats">
+                    <span>⏱️ 8 phút đọc</span>
+                    <span>👁️ 45 lượt xem</span>
+                    <span>💬 2 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 8 -->
+            <article class="post-item" data-category="network">
+                <div class="post-meta">
+                    <span class="post-date">📅 04/12/2024</span>
+                    <span class="category network">Lập trình mạng</span>
+                </div>
+                <h3><a href="posts/spring-boot.html">Spring Boot Cho Ứng Dụng Web</a></h3>
+                <p>Tạo REST API, kết nối database với Spring Boot và Java...</p>
+                <div class="post-stats">
+                    <span>⏱️ 12 phút đọc</span>
+                    <span>👁️ 58 lượt xem</span>
+                    <span>💬 5 bình luận</span>
+                </div>
+            </article>
+
+            <!-- Bài viết 9 -->
+            <article class="post-item" data-category="java">
+                <div class="post-meta">
+                    <span class="post-date">📅 07/12/2024</span>
+                    <span class="category java">Java</span>
+                </div>
+                <h3><a href="posts/spring-boot-2.html">Spring Boot Nâng Cao: Security & JWT</a></h3>
+                <p>Bảo mật ứng dụng Spring Boot với JWT và Spring Security...</p>
+                <div class="post-stats">
+                    <span>⏱️ 11 phút đọc</span>
+                    <span>👁️ 42 lượt xem</span>
+                    <span>💬 3 bình luận</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Blog Lập Trình Mạng - Tinipro12345</p>
+            <p>📧 Liên hệ: tinipro12345@example.com | 🐱 GitHub: <a href="https://github.com/Tinipro12345">Tinipro12345</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter bài viết theo category
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const postItems = document.querySelectorAll('.post-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter posts
+                    postItems.forEach(post => {
+                        if (filter === 'all' || post.getAttribute('data-category') === filter) {
+                            post.style.display = 'block';
+                            setTimeout(() => {
+                                post.style.opacity = '1';
+                                post.style.transform = 'translateX(0)';
+                            }, 10);
+                        } else {
+                            post.style.opacity = '0';
+                            post.style.transform = 'translateX(-20px)';
+                            setTimeout(() => {
+                                post.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Thêm animation cho bài viết
+            postItems.forEach((post, index) => {
+                post.style.opacity = '0';
+                post.style.transform = 'translateY(20px)';
+                post.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    post.style.opacity = '1';
+                    post.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
