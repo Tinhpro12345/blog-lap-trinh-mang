@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Cơ Bản Cho Người Mới | Blog Lập Trình</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .post-header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .post-meta {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid #bbdefb;
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            border-left: 4px solid #3498db;
+        }
+        
+        .code-block code {
+            background: none;
+            padding: 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 1.5rem 0 0.8rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d35400;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">📝 Blog Lập Trình Mạng</h1>
+            <nav>
+                <a href="../index.html">🏠 Home</a>
+                <a href="../blog.html">📚 Blog</a>
+                <a href="../about.html">👤 About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="post-content">
+            <div class="post-header">
+                <div class="post-meta">
+                    <span>📅 Đăng ngày: 15/11/2024</span>
+                    <span>⏱️ 5 phút đọc</span>
+                    <span>👁️ 125 lượt xem</span>
+                    <span>👤 Tác giả: Trần Văn Tín</span>
+                </div>
+                
+                <div class="post-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Lập trình cơ bản</span>
+                    <span class="tag">Hướng dẫn</span>
+                    <span class="tag">Cho người mới</span>
+                </div>
+                
+                <h1>Java Cơ Bản Cho Người Mới Bắt Đầu</h1>
+                <p style="font-size: 1.1rem; color: #7f8c8d;">Hướng dẫn từ cài đặt đến viết chương trình Java đầu tiên cho người mới học lập trình.</p>
+            </div>
+            
+            <h2>📦 1. Cài đặt môi trường Java</h2>
+            <p>Để bắt đầu với Java, bạn cần chuẩn bị:</p>
+            <ul>
+                <li><strong>JDK (Java Development Kit):</strong> Phiên bản mới nhất từ Oracle hoặc OpenJDK</li>
+                <li><strong>IDE (Integrated Development Environment):</strong> IntelliJ IDEA (khuyên dùng), Eclipse hoặc VS Code</li>
+                <li><strong>Text Editor:</strong> Notepad++, Sublime Text (nếu không dùng IDE)</li>
+            </ul>
+            
+            <h3>Các bước cài đặt:</h3>
+            <ol>
+                <li>Tải JDK từ trang chủ Oracle</li>
+                <li>Cài đặt JDK trên máy tính</li>
+                <li>Thiết lập biến môi trường JAVA_HOME</li>
+                <li>Kiểm tra cài đặt bằng Command Prompt/Terminal:</li>
+            </ol>
+            
+            <div class="code-block">
+// Mở Command Prompt/Terminal và gõ:
+java -version
+javac -version
+
+// Kết quả mong đợi:
+// java version "17.0.1" 2021-10-19 LTS
+// Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+// Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
+            </div>
+            
+            <h2>👋 2. Chương trình Java đầu tiên</h2>
+            <p>Tạo file <code>HelloWorld.java</code> với nội dung sau:</p>
+            
+            <div class="code-block">
+// HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Xin chào thế giới Java!");
+        System.out.println("Chào mừng bạn đến với lập trình Java!");
+    }
+}
+            </div>
+            
+            <h3>Giải thích cú pháp:</h3>
+            <ul>
+                <li><code>public class HelloWorld</code>: Định nghĩa một class tên HelloWorld</li>
+                <li><code>public static void main(String[] args)</code>: Phương thức main - điểm bắt đầu chương trình</li>
+                <li><code>System.out.println()</code>: In ra màn hình</li>
+            </ul>
+            
+            <h3>Biên dịch và chạy chương trình:</h3>
+            <div class="code-block">
+// 1. Mở terminal trong thư mục chứa file
+// 2. Biên dịch file .java thành file .class
+javac HelloWorld.java
+
+// 3. Chạy chương trình
+java HelloWorld
+
+// Kết quả:
+// Xin chào thế giới Java!
+// Chào mừng bạn đến với lập trình Java!
+            </div>
+            
+            <blockquote>
+                <strong>💡 Mẹo:</strong> Tên file phải trùng với tên class và có phần mở rộng .java
+            </blockquote>
+            
+            <h2>🔤 3. Biến và kiểu dữ liệu</h2>
+            <p>Java có 8 kiểu dữ liệu nguyên thủy (primitive types):</p>
+            
+            <div class="code-block">
+public class VariablesExample {
+    public static void main(String[] args) {
+        // Kiểu số nguyên
+        byte age = 25;          // -128 đến 127
+        short year = 2024;      // -32,768 đến 32,767
+        int salary = 15000000;  // -2^31 đến 2^31-1
+        long population = 7800000000L; // -2^63 đến 2^63-1
+        
+        // Kiểu số thực
+        float price = 19.99f;   // 7 chữ số thập phân
+        double pi = 3.1415926535; // 15 chữ số thập phân
+        
+        // Kiểu ký tự
+        char grade = 'A';       // Một ký tự Unicode
+        char vietnameseChar = 'ễ'; // Hỗ trợ tiếng Việt
+        
+        // Kiểu boolean
+        boolean isJavaFun = true; // true hoặc false
+        
+        // Kiểu đối tượng (Object type)
+        String name = "Nguyễn Văn A";
+        String message = "Xin chào " + name + "!";
+        
+        // Hiển thị giá trị
+        System.out.println("Tuổi: " + age);
+        System.out.println("Lương: " + salary + " VND");
+        System.out.println("Thông điệp: " + message);
+        System.out.println("Java có vui không? " + isJavaFun);
+    }
+}
+            </div>
+            
+            <h2>🎮 4. Cấu trúc điều khiển cơ bản</h2>
+            
+            <h3>If-else statement:</h3>
+            <div class="code-block">
+public class IfElseExample {
+    public static void main(String[] args) {
+        int score = 85;
+        
+        if (score >= 90) {
+            System.out.println("Xuất sắc! Điểm A");
+        } else if (score >= 80) {
+            System.out.println("Giỏi! Điểm B");
+        } else if (score >= 70) {
+            System.out.println("Khá! Điểm C");
+        } else if (score >= 50) {
+            System.out.println("Trung bình! Điểm D");
+        } else {
+            System.out.println("Không đạt! Điểm F");
+        }
+    }
+}
+            </div>
+            
+            <h3>Vòng lặp for:</h3>
+            <div class="code-block">
+public class ForLoopExample {
+    public static void main(String[] args) {
+        System.out.println("Đếm từ 1 đến 5:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Lần lặp thứ " + i);
+        }
+        
+        System.out.println("\nBảng cửu chương 2:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("2 x " + i + " = " + (2 * i));
+        }
+    }
+}
+            </div>
+            
+            <h2>📝 Bài tập thực hành</h2>
+            <p><strong>Bài 1:</strong> Viết chương trình tính tổng các số từ 1 đến N</p>
+            <p><strong>Bài 2:</strong> Viết chương trình kiểm tra số nguyên tố</p>
+            <p><strong>Bài 3:</strong> Viết chương trình tính giai thừa</p>
+            
+            <div class="code-block">
+// Gợi ý Bài 1
+import java.util.Scanner;
+
+public class SumNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số N: ");
+        int n = scanner.nextInt();
+        
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        
+        System.out.println("Tổng từ 1 đến " + n + " là: " + sum);
+        scanner.close();
+    }
+}
+            </div>
+            
+            <h2>✅ Kết luận</h2>
+            <p>Java là ngôn ngữ lập trình mạnh mẽ, được sử dụng rộng rãi trong phát triển ứng dụng doanh nghiệp, Android, và hệ thống lớn. Những kiến thức cơ bản này là nền tảng để bạn học sâu hơn về Java.</p>
+            
+            <p><strong>Lời khuyên cho người mới bắt đầu:</strong></p>
+            <ul>
+                <li>📚 Đọc tài liệu chính thức của Oracle</li>
+                <li>💻 Thực hành code mỗi ngày</li>
+                <li>🤔 Hiểu rõ lý thuyết trước khi code</li>
+                <li>🔍 Debug là bạn, đừng sợ lỗi</li>
+                <li>👥 Tham gia cộng đồng Java Việt Nam</li>
+            </ul>
+            
+            <div class="navigation">
+                <a href="../blog.html" class="nav-btn">← Quay lại Blog</a>
+                <a href="javascript-co-ban.html" class="nav-btn">Bài tiếp: JavaScript cơ bản →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Blog Lập Trình Mạng - Tinipro12345</p>
+            <p>📚 Bài viết thuộc chuyên mục: <a href="../blog.html?filter=java">Java Programming</a></p>
+        </div>
+    </footer>
+</body>
+</html>
