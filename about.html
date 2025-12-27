@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu | Blog Lập Trình Mạng</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .profile-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-name {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .about-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-link {
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">📝 Blog Lập Trình Mạng</h1>
+            <nav>
+                <a href="index.html">🏠 Home</a>
+                <a href="blog.html">📚 Blog</a>
+                <a href="about.html" style="background-color: rgba(255,255,255,0.1);">👤 About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="about-container">
+            <!-- Profile Card -->
+            <section class="profile-card">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tinipro12345&backgroundColor=3498db" 
+                     alt="Avatar" class="profile-img">
+                <h1 class="profile-name">Trần Văn Tín</h1>
+                <p class="profile-title">🎓 Sinh viên CNTT & Lập trình viên Java/JavaScript</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:tinipro12345@example.com" class="contact-link">📧 Email</a>
+                    <a href="https://github.com/Tinipro12345" class="contact-link" target="_blank">🐱 GitHub</a>
+                    <a href="#" class="contact-link">💼 LinkedIn</a>
+                </div>
+            </section>
+
+            <!-- About Me -->
+            <section class="about-section">
+                <h2>👋 Về tôi</h2>
+                <p>Xin chào! Tôi là Tín, một sinh viên Công nghệ Thông tin đam mê lập trình và công nghệ. Blog này được tạo ra để chia sẻ những kiến thức tôi đã học được từ các khóa học về lập trình mạng, Java và JavaScript.</p>
+                
+                <p>Tôi tin rằng việc chia sẻ kiến thức không chỉ giúp củng cố hiểu biết của bản thân mà còn có thể giúp đỡ những người khác trên con đường học lập trình.</p>
+            </section>
+
+            <!-- Skills -->
+            <section class="about-section">
+                <h2>💼 Kỹ năng & Chuyên môn</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>☕ Java</h4>
+                        <p>OOP, Collection, Multithreading, Socket Programming</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>📜 JavaScript</h4>
+                        <p>ES6+, DOM, Node.js, Express.js</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🌐 Lập trình mạng</h4>
+                        <p>TCP/IP, HTTP, WebSocket, REST API</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>🎨 Frontend</h4>
+                        <p>HTML5, CSS3, Responsive Design</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses -->
+            <section class="about-section">
+                <h2>📚 Các khóa học đã học</h2>
+                <ul>
+                    <li><strong>🎯 Java Programming Fundamentals</strong> - Nắm vững lập trình hướng đối tượng với Java</li>
+                    <li><strong>🎯 Advanced Java & Spring Boot</strong> - Phát triển ứng dụng web với Spring Framework</li>
+                    <li><strong>🎯 JavaScript & Node.js Complete Guide</strong> - Full-stack development với JavaScript</li>
+                    <li><strong>🎯 Network Programming in Java</strong> - Lập trình mạng với Socket và HTTP</li>
+                    <li><strong>🎯 Web Development Bootcamp</strong> - HTML, CSS, JavaScript cơ bản đến nâng cao</li>
+                </ul>
+            </section>
+
+            <!-- Blog Goals -->
+            <section class="about-section">
+                <h2>🎯 Mục tiêu của blog</h2>
+                <ul>
+                    <li>📝 Chia sẻ kiến thức lập trình mạng bằng tiếng Việt</li>
+                    <li>💡 Ghi lại quá trình học tập và nghiên cứu</li>
+                    <li>🤝 Kết nối với cộng đồng lập trình viên Việt Nam</li>
+                    <li>🚀 Cùng nhau phát triển kỹ năng lập trình</li>
+                    <li>🎓 Hỗ trợ các bạn sinh viên CNTT</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Blog Lập Trình Mạng - Tinipro12345</p>
+            <p>📚 Chia sẻ kiến thức Java & JavaScript | 🌐 Lập trình mạng</p>
+        </div>
+    </footer>
+</body>
+</html>
