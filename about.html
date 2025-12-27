@@ -1,193 +1,701 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Title -->
     <title>Giới thiệu | Blog Lập Trình Mạng</title>
-    <link rel="stylesheet" href="style.css">
+
     <style>
-        .about-container {
-            max-width: 800px;
-            margin: 2rem auto;
+        /* Reset và base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        .profile-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
         }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #3498db;
-            margin-bottom: 1rem;
-        }
-        
-        .profile-name {
-            color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .profile-title {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .about-section h2 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3498db;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .skill-card {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .skill-card h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-links {
+
+        /* Header Styles */
+        header {
+            background-color: #1e293b;
+            padding: 1.5rem 2rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
-        .contact-link {
-            padding: 0.8rem 1.5rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+
+        .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 1rem;
         }
-        
-        .contact-link:hover {
-            background: #2980b9;
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3b82f6;
+        }
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3b82f6;
+            text-decoration: none;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        nav a.active {
+            color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+
+        button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Main Content Styles */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-title h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, transparent);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateX(10px);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Courses List */
+        .courses-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .course-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .course-item:hover {
+            background: rgba(30, 41, 59, 0.9);
+            transform: translateX(5px);
+        }
+
+        .course-icon {
+            color: #3b82f6;
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .course-content h3 {
+            color: #e2e8f0;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .course-content p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Goals Grid */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .goal-card {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .goal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .goal-card p {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 20px;
+            margin-top: 3rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: rgba(30, 41, 59, 0.8);
+            color: #e2e8f0;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-btn:hover {
+            background: #3b82f6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .profile-title h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid,
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            .logo a {
+                font-size: 1.5rem;
+            }
+
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+
+            .profile-title h1 {
+                font-size: 2rem;
+            }
+
+            .profile-avatar {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1 class="logo">📝 Blog Lập Trình Mạng</h1>
-            <nav>
-                <a href="index.html">🏠 Home</a>
-                <a href="blog.html">📚 Blog</a>
-                <a href="about.html" style="background-color: rgba(255,255,255,0.1);">👤 About</a>
-            </nav>
-        </div>
+      <div class="logo">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tinhpro12345&backgroundColor=3b82f6" alt="logo" />
+        <a href="index.html">Tinipro</a>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <button><span>📧 Liên hệ</span></button>
+      </nav>
+
+      <div class="hamburger-menu">
+        <svg
+        width="35px"
+        height="35px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 18L20 18"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M4 12L20 12"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M4 6L20 6"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+      </div>
     </header>
 
-    <main class="container">
-        <div class="about-container">
-            <!-- Profile Card -->
-            <section class="profile-card">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tinipro12345&backgroundColor=3498db" 
-                     alt="Avatar" class="profile-img">
-                <h1 class="profile-name">Trần Văn Tín</h1>
-                <p class="profile-title">🎓 Sinh viên CNTT & Lập trình viên Java/JavaScript</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:tinipro12345@example.com" class="contact-link">📧 Email</a>
-                    <a href="https://github.com/Tinipro12345" class="contact-link" target="_blank">🐱 GitHub</a>
-                    <a href="#" class="contact-link">💼 LinkedIn</a>
-                </div>
-            </section>
+    <main>
+      <div class="about-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="profile-header">
+            <img 
+              src="https://api.dicebear.com/7.x/avataaars/svg?seed=Tinhpro12345&backgroundColor=3b82f6&hairColor=000000" 
+              alt="Avatar" 
+              class="profile-avatar"
+            />
+            <div class="profile-title">
+              <h1>Trần Văn Tín</h1>
+              <div class="profile-subtitle">
+                🎓 Sinh viên CNTT & Lập trình viên Java/JavaScript
+              </div>
+              <div class="profile-badges">
+                <span class="badge">☕ Java Developer</span>
+                <span class="badge">📜 JavaScript</span>
+                <span class="badge">🌐 Network Programming</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- About Me -->
-            <section class="about-section">
-                <h2>👋 Về tôi</h2>
-                <p>Xin chào! Tôi là Tín, một sinh viên Công nghệ Thông tin đam mê lập trình và công nghệ. Blog này được tạo ra để chia sẻ những kiến thức tôi đã học được từ các khóa học về lập trình mạng, Java và JavaScript.</p>
-                
-                <p>Tôi tin rằng việc chia sẻ kiến thức không chỉ giúp củng cố hiểu biết của bản thân mà còn có thể giúp đỡ những người khác trên con đường học lập trình.</p>
-            </section>
+        <!-- About Me Section -->
+        <section class="content-section">
+          <h2 class="section-title">👋 Về tôi</h2>
+          <p>Xin chào! Tôi là Tĩnh, một sinh viên Công nghệ Thông tin đam mê lập trình và công nghệ. Blog này được tạo ra để chia sẻ những kiến thức tôi đã học được từ các khóa học về lập trình mạng, Java và JavaScript.</p>
+          <p style="margin-top: 1rem;">Tôi tin rằng việc chia sẻ kiến thức không chỉ giúp củng cố hiểu biết của bản thân mà còn có thể giúp đỡ những người khác trên con đường học lập trình.</p>
+        </section>
 
-            <!-- Skills -->
-            <section class="about-section">
-                <h2>💼 Kỹ năng & Chuyên môn</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h4>☕ Java</h4>
-                        <p>OOP, Collection, Multithreading, Socket Programming</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>📜 JavaScript</h4>
-                        <p>ES6+, DOM, Node.js, Express.js</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>🌐 Lập trình mạng</h4>
-                        <p>TCP/IP, HTTP, WebSocket, REST API</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>🎨 Frontend</h4>
-                        <p>HTML5, CSS3, Responsive Design</p>
-                    </div>
-                </div>
-            </section>
+        <!-- Skills Section -->
+        <section class="content-section">
+          <h2 class="section-title">💼 Kỹ năng & Chuyên môn</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon">☕</div>
+              <h3>Java Development</h3>
+              <p>OOP, Collection Framework, Multithreading, Socket Programming, Spring Boot</p>
+            </div>
+            
+            <div class="skill-card">
+              <div class="skill-icon">📜</div>
+              <h3>JavaScript</h3>
+              <p>ES6+, DOM Manipulation, Node.js, Express.js, React Basics, Async Programming</p>
+            </div>
+            
+            <div class="skill-card">
+              <div class="skill-icon">🌐</div>
+              <h3>Network Programming</h3>
+              <p>TCP/IP, HTTP/HTTPS, WebSocket, REST API, Socket Programming, Client-Server</p>
+            </div>
+            
+            <div class="skill-card">
+              <div class="skill-icon">🎨</div>
+              <h3>Frontend Development</h3>
+              <p>HTML5, CSS3, Responsive Design, UI/UX Basics, Bootstrap/Tailwind</p>
+            </div>
+          </div>
+        </section>
 
-            <!-- Courses -->
-            <section class="about-section">
-                <h2>📚 Các khóa học đã học</h2>
-                <ul>
-                    <li><strong>🎯 Java Programming Fundamentals</strong> - Nắm vững lập trình hướng đối tượng với Java</li>
-                    <li><strong>🎯 Advanced Java & Spring Boot</strong> - Phát triển ứng dụng web với Spring Framework</li>
-                    <li><strong>🎯 JavaScript & Node.js Complete Guide</strong> - Full-stack development với JavaScript</li>
-                    <li><strong>🎯 Network Programming in Java</strong> - Lập trình mạng với Socket và HTTP</li>
-                    <li><strong>🎯 Web Development Bootcamp</strong> - HTML, CSS, JavaScript cơ bản đến nâng cao</li>
-                </ul>
-            </section>
+        <!-- Courses Section -->
+        <section class="content-section">
+          <h2 class="section-title">📚 Các khóa học đã học</h2>
+          <div class="courses-list">
+            <div class="course-item">
+              <div class="course-icon">🎯</div>
+              <div class="course-content">
+                <h3>Java Programming Fundamentals</h3>
+                <p>Nắm vững lập trình hướng đối tượng với Java, từ cơ bản đến nâng cao</p>
+              </div>
+            </div>
+            
+            <div class="course-item">
+              <div class="course-icon">🎯</div>
+              <div class="course-content">
+                <h3>Advanced Java & Spring Boot</h3>
+                <p>Phát triển ứng dụng web với Spring Framework và Spring Boot</p>
+              </div>
+            </div>
+            
+            <div class="course-item">
+              <div class="course-icon">🎯</div>
+              <div class="course-content">
+                <h3>JavaScript & Node.js Complete Guide</h3>
+                <p>Full-stack development với JavaScript từ frontend đến backend</p>
+              </div>
+            </div>
+            
+            <div class="course-item">
+              <div class="course-icon">🎯</div>
+              <div class="course-content">
+                <h3>Network Programming in Java</h3>
+                <p>Lập trình mạng với Socket, HTTP Client, và các giao thức mạng</p>
+              </div>
+            </div>
+            
+            <div class="course-item">
+              <div class="course-icon">🎯</div>
+              <div class="course-content">
+                <h3>Web Development Bootcamp</h3>
+                <p>HTML, CSS, JavaScript từ cơ bản đến nâng cao cho web development</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Blog Goals -->
-            <section class="about-section">
-                <h2>🎯 Mục tiêu của blog</h2>
-                <ul>
-                    <li>📝 Chia sẻ kiến thức lập trình mạng bằng tiếng Việt</li>
-                    <li>💡 Ghi lại quá trình học tập và nghiên cứu</li>
-                    <li>🤝 Kết nối với cộng đồng lập trình viên Việt Nam</li>
-                    <li>🚀 Cùng nhau phát triển kỹ năng lập trình</li>
-                    <li>🎓 Hỗ trợ các bạn sinh viên CNTT</li>
-                </ul>
-            </section>
-        </div>
+        <!-- Blog Goals Section -->
+        <section class="content-section">
+          <h2 class="section-title">🎯 Mục tiêu của blog</h2>
+          <div class="goals-grid">
+            <div class="goal-card">
+              <div class="goal-icon">📝</div>
+              <p>Chia sẻ kiến thức lập trình mạng bằng tiếng Việt</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">💡</div>
+              <p>Ghi lại quá trình học tập và nghiên cứu</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">🤝</div>
+              <p>Kết nối với cộng đồng lập trình viên Việt Nam</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">🚀</div>
+              <p>Cùng nhau phát triển kỹ năng lập trình</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">🎓</div>
+              <p>Hỗ trợ các bạn sinh viên CNTT</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+          <h2 class="section-title">📞 Liên hệ với tôi</h2>
+          <p>Cùng nhau học hỏi và phát triển trong lĩnh vực lập trình!</p>
+          
+          <div class="contact-buttons">
+            <a href="mailto:nguyenhongtinh2004@gmail.com" class="contact-btn">
+              <span>📧</span> Email
+            </a>
+            
+            <a href="https://github.com/Tinhpro12345" target="_blank" class="contact-btn">
+              <span>🐱</span> GitHub
+            </a>
+            
+            <a href="#" class="contact-btn">
+              <span>💼</span> LinkedIn
+            </a>
+            
+            <a href="blog.html" class="contact-btn">
+              <span>📚</span> Đọc Blog
+            </a>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2024 Blog Lập Trình Mạng - Tinipro12345</p>
-            <p>📚 Chia sẻ kiến thức Java & JavaScript | 🌐 Lập trình mạng</p>
-        </div>
+      <div class="container">
+        <p>© 2025 Blog Lập Trình Mạng - Tinhpro12345</p>
+        <p>📚 Chia sẻ kiến thức Java & JavaScript | 🌐 Lập trình mạng</p>
+        <p>
+          <a href="index.html">Home</a> | 
+          <a href="blog.html">Blog</a> | 
+          <a href="about.html">About</a> | 
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
     </footer>
-</body>
+
+    <script>
+      // Hamburger menu functionality
+      document.querySelector('.hamburger-menu').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Update current year in footer
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearSpan = document.querySelector('footer .current-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
+  </body>
 </html>
